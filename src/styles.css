@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-/* CONTENEDOR SUPERIOR */
+/***** CONTENEDOR SUPERIOR *****/
 .top-container {
     display: flex;
     justify-content: space-between;
@@ -53,14 +53,79 @@
     background-color: rgb(137, 230, 230);
 }
 
-/* CONTENEDOR PRINCIPAL */
+/***** CONTENEDOR PRINCIPAL *****/
 
 #root {
     display: flex;
     min-height: 93vh;
 }
 
-/* CONTENEDOR INFERIOR */
+/* LOGIN-CHECKIN */
+
+.login-checkin-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 50vw;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.options button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: background-color 0.2ms;
+}
+
+.options button:hover {
+    background-color: rgb(137, 238, 238);
+    cursor: pointer;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login-form input {
+    margin-bottom: 10px;
+}
+
+.checkin-form {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.checkin-form input {
+    margin-bottom: 10px;
+}
+
+.submit {
+    justify-self: center;
+    width: 100px;
+    margin-top: 10px;
+    transition: background-color 0.2ms;
+}
+
+.submit:hover {
+    background-color: rgb(137, 238, 238);
+    cursor: pointer;
+}
+
+/***** CONTENEDOR INFERIOR *****/
 
 .bot-container {
     display: flex;
