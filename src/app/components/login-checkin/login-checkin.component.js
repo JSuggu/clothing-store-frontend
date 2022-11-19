@@ -38,8 +38,19 @@ export const loginAndCheckinComponent = {
                 },
                 body: JSON.stringify(userData)
             });
+
+            if(response.status >= 400){
+                const error = await response.json();
+                alert(error.message);
+                return false;
+            }
+
             const dataJson = await response.json();
-            console.log(dataJson);
+            localStorage.setItem("user", dataJson.token);
+            sessionStorage.setItem("login", true);
+            sessionStorage.setItem("user", JSON.stringify({names: dataJson.user.names, userName: dataJson.user.user_name, email: dataJson.user.email}))
+            window.location.reload();
+            return true;
         });
     },
 
@@ -60,8 +71,17 @@ export const loginAndCheckinComponent = {
                 },
                 body: JSON.stringify(userData)
             });
+
+            if(response.status >= 400){
+                const error = await response.json();
+                alert(error.message);
+                return false;
+            }
+
             const dataJson = await response.json();
-            console.log(dataJson);
+            alert(dataJson.message);
+            window.location.reload();
+            return true;
         });
     }
 }
