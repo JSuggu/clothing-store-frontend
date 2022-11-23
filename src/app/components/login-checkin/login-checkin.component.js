@@ -48,7 +48,7 @@ export const loginAndCheckinComponent = {
             const dataJson = await response.json();
             localStorage.setItem("user", dataJson.token);
             sessionStorage.setItem("login", true);
-            sessionStorage.setItem("user", JSON.stringify({names: dataJson.user.names, userName: dataJson.user.user_name, email: dataJson.user.email}))
+            sessionStorage.setItem("user", JSON.stringify({names: dataJson.user.names, userName: dataJson.user.user_name, email: dataJson.user.email, rol:dataJson.user.users_role.name}))
             window.location.reload();
             return true;
         });

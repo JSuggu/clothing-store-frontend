@@ -24,5 +24,17 @@ export const userComponent = {
         email.innerHTML = `Email = ${user.email}`;
 
         return true;
+    },
+
+    signOff: function(){
+        const signOffButton = divElem.querySelector(".sign-off");
+        signOffButton.addEventListener("click", e =>{
+            e.preventDefault;
+            sessionStorage.setItem("login", "false");
+            sessionStorage.removeItem("user");
+            window.location.reload();
+        });
+
+        return true;
     }
 }

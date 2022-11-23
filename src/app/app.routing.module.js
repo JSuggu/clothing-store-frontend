@@ -25,6 +25,7 @@ const router = async function(route) {
         if(sessionStorage.getItem("login") == "true"){
             root.appendChild(userComponent.view());
             userComponent.loadData();
+            userComponent.signOff();
             return true;
         }
         root.appendChild(loginAndCheckinComponent.view());
