@@ -151,6 +151,76 @@
     margin-top: 10px;
 }
 
+/* PRODUCTOS */
+.products-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.products-container h1 {
+    text-align: center;
+}
+
+.filters-and-products {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    min-width: 10%;
+    padding-left: 10px;
+    padding-top: 2%;
+    border-right: 1px dashed black;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-left: 5%;
+    grid-auto-rows: 40%;
+    column-gap: 5%;
+    row-gap: 5%;
+    justify-items: center;
+    width: 90%;
+    min-height: 95%;
+    overflow-y: auto;
+}
+
+.clothe {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(137, 202, 245);
+    border-radius: 3%;
+    overflow-y: auto;
+}
+
+.clothe-image {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.clothe span {
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.clothe button {
+    margin-bottom: 10px;
+}
+
 /***** CONTENEDOR INFERIOR *****/
 
 .bot-container {
