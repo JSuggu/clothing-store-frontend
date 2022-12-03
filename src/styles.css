@@ -7,8 +7,8 @@
 .top-container {
     display: flex;
     justify-content: space-between;
-    min-height: 7vh;
-    background-color: rgb(137, 238, 238);
+    min-height: 5vh;
+    background-color: rgb(204, 233, 253);
 }
 
 .logo {
@@ -50,14 +50,14 @@
 .navbar a:hover {
     font-size: 20px;
     cursor: pointer;
-    background-color: rgb(137, 230, 230);
+    background-color: rgb(137, 202, 245);
 }
 
 /***** CONTENEDOR PRINCIPAL *****/
 
 #root {
     display: flex;
-    min-height: 93vh;
+    min-height: 95vh;
 }
 
 /* LOGIN-CHECKIN */
@@ -85,7 +85,7 @@
 }
 
 .options button:hover {
-    background-color: rgb(137, 238, 238);
+    background-color: rgb(137, 202, 245);
     cursor: pointer;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .submit:hover {
-    background-color: rgb(137, 238, 238);
+    background-color: rgb(137, 202, 245);
     cursor: pointer;
 }
 
@@ -129,7 +129,6 @@
 .user-container {
     display: flex;
     width: 100%;
-    height: 100%;
     flex-direction: column;
     align-items: center;
 }
@@ -152,20 +151,27 @@
 }
 
 /* PRODUCTOS */
-.products-container {
+.filters-products-container {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.products-container h1 {
+.filters-products-container h1 {
+    margin-top: 10px;
     text-align: center;
+}
+
+.add-button {
+    width: 200px;
+    margin-left: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .filters-and-products {
     display: flex;
     width: 100%;
-    height: 100%;
 }
 
 .filters {
@@ -179,6 +185,7 @@
 
 .products {
     display: grid;
+    width: 90%;
     grid-template-columns: 20% 20% 20% 20%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -187,22 +194,17 @@
     column-gap: 5%;
     row-gap: 5%;
     justify-items: center;
-    width: 90%;
-    min-height: 95%;
-    overflow-y: auto;
 }
 
 .clothe {
     display: flex;
     width: 100%;
-    height: 100%;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     border: 1px solid rgb(137, 202, 245);
     border-radius: 3%;
-    overflow-y: auto;
 }
 
 .clothe-image {
@@ -218,7 +220,63 @@
 }
 
 .clothe button {
+    margin-bottom: 10px;   
+}
+
+.clothe button:hover {
+    cursor: pointer;
+}
+
+/*Formularios para hacer inserciones y modificaciones a los productos*/
+.clothes-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(204, 233, 253);
+    border: 1px solid rgb(137, 202, 245);
+    border-radius: 1%;
+    min-width: 30%;
+    min-height: 70%;
+}
+
+.form-container h1 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.clothe-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+.clothe-form input {
     margin-bottom: 10px;
+}
+
+.close-form {
+    align-self: flex-end;
+}
+
+.close-form:hover {
+    cursor: pointer;
+}
+
+#send-form {
+    margin-top: 20px;
 }
 
 /***** CONTENEDOR INFERIOR *****/
@@ -226,5 +284,5 @@
 .bot-container {
     display: flex;
     align-items: center;
-    background-color: rgb(137, 238, 238);
+    background-color: rgb(204, 233, 253);
 }

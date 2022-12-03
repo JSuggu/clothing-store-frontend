@@ -5,6 +5,7 @@ import { productsComponent } from "./components/products/products.component";
 
 const root = document.querySelector("#root");
 
+//Rutas
 const router = async function(route) {
     root.innerHTML = "";
 
@@ -22,6 +23,8 @@ const router = async function(route) {
     if(route == "#/products"){
         root.appendChild(productsComponent.view());
         productsComponent.loadProducts();
+        productsComponent.filterClothe();
+        productsComponent.addClothe();
         return true;
     }
 
