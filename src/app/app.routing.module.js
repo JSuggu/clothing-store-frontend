@@ -25,6 +25,8 @@ const router = async function(route) {
         productsComponent.loadProducts();
         productsComponent.filterClothe();
         productsComponent.addClothe();
+        productsComponent.modifyClothe();
+        productsComponent.deleteClothe();
         return true;
     }
 

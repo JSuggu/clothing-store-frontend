@@ -190,7 +190,7 @@
     margin-top: 2%;
     margin-bottom: 2%;
     padding-left: 5%;
-    grid-auto-rows: 40%;
+    grid-auto-rows: 360px;
     column-gap: 5%;
     row-gap: 5%;
     justify-items: center;
