@@ -14,12 +14,12 @@ export const productsComponent = {
     //Funcion que muestra todos los productos de la base de datos
     loadProducts: async function (){
         const response = await fetch("http://localhost:3000/products");
-        const productsData = (await response.json()).allProducts;
+        const allProducts = (await response.json()).allProducts;
 
         const productsElem = divElem.querySelector(".products");
 
         //Recorro todos los productos de la base de datos, extraigo los datos los meto en una constante y lo añado al html
-        productsData.forEach( clothe => {
+        allProducts.forEach( clothe => {
             const product = {
                 id: clothe.id,
                 name: clothe.name,
@@ -31,8 +31,8 @@ export const productsComponent = {
         });
 
         //calcular altura del contenedor de los productos
-        let elems = productsData.length / 4;
-        const elemsRest = productsData.length % 4;
+        let elems = allProducts.length / 4;
+        const elemsRest = allProducts.length % 4;
         if(elemsRest != 0)
             elems += 1;
 
@@ -41,11 +41,50 @@ export const productsComponent = {
         return true;
     },
 
-    filterClothe: function (){
+    filterProducts: async function (){
+        const filtersAndProducts = divElem.querySelector(".filters-and-products");
+        const filters = divElem.querySelector(".filters");
 
+        filters.addEventListener("click", async e => {
+            e.stopImmediatePropagation();
+            const productsElem = filtersAndProducts.querySelector(".products");
+
+            if(e.target.nodeName.toLowerCase() != "input")
+                return false;
+
+            const filterSelected = e.target.className;
+
+            const response = await fetch(`http://localhost:3000/products/${filterSelected}`)
+            const allProductsFiltered = (await response.json()).allProducts;
+            
+            filtersAndProducts.removeChild(productsElem);
+            const newProductsElem = document.createElement("section");
+            newProductsElem.className = "products";
+            filtersAndProducts.appendChild(newProductsElem);
+
+            allProductsFiltered.forEach( clothe => {
+                const product = {
+                    id: clothe.id,
+                    name: clothe.name,
+                    price: clothe.price,
+                    color: clothe.clothes_color == null ? "" : clothe.clothes_color.name,
+                    type: clothe.clothes_type == null ? "" : clothe.clothes_type.name
+                }
+                newProductsElem.appendChild(productCardService(product));
+            });
+            
+            let elems = allProductsFiltered.length / 4;
+            const elemsRest = allProductsFiltered.length % 4;
+            if(elemsRest != 0)
+                elems += 1;
+
+            divElem.style.height = Math.trunc(elems)*460 + "px";
+        });
+
+        return true;
     },
 
-    addClothe: function (){
+    addProducts: function (){
         if(sessionStorage.getItem("user") == null || JSON.parse(sessionStorage.getItem("user")).role == "customer")
             return false;
 
@@ -99,7 +138,7 @@ export const productsComponent = {
         return true;
     },
 
-    modifyClothe: function(){
+    modifyProducts: function(){
         const products = divElem.querySelector(".products");
         const filtersAndProducts = divElem.querySelector(".filters-and-products");
 
@@ -170,12 +209,12 @@ export const productsComponent = {
 
     },
 
-    deleteClothe: function(){
+    deleteProducts: function(){
         const products = divElem.querySelector(".products");
         const token = "Bearer " + localStorage.getItem("user");
         products.addEventListener("click", async e => {
-            const clotheId = e.path[1].querySelector("#clothe-id").innerHTML.split(" ")[1];
             if (e.target.className == "delete-clothe"){
+                const clotheId = e.path[1].querySelector("#clothe-id").innerHTML.split(" ")[1];
                 const answer = prompt("Realmente quiere borrar este elemento? si/no");
 
                 if(answer.toLowerCase() == "si"){

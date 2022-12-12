@@ -22,11 +22,11 @@ const router = async function(route) {
 
     if(route == "#/products"){
         root.appendChild(productsComponent.view());
-        productsComponent.loadProducts();
-        productsComponent.filterClothe();
-        productsComponent.addClothe();
-        productsComponent.modifyClothe();
-        productsComponent.deleteClothe();
+        await productsComponent.loadProducts();
+        await productsComponent.filterProducts();
+        productsComponent.addProducts();
+        productsComponent.modifyProducts();
+        productsComponent.deleteProducts();
         return true;
     }
 
