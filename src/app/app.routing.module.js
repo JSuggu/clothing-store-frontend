@@ -4,6 +4,8 @@ import { userComponent } from "./components/user/user.component";
 import { productsComponent } from "./components/products/products.component";
 
 const root = document.querySelector("#root");
+if(sessionStorage.getItem("login") == null)
+    fetch("http://localhost:3000/database/backup", {method:"PUT"});
 
 //Rutas
 const router = async function(route) {
