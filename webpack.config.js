@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { output } = require("../../ejercicios/spa/login/frontend/webpack.config");
 
 module.exports = {
     entry: "./src/index.js",

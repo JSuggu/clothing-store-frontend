@@ -6,19 +6,26 @@
 /***** CONTENEDOR SUPERIOR *****/
 .top-container {
     display: flex;
+    min-width: 710px;
+    max-width: 100%;
     justify-content: space-between;
-    min-height: 5vh;
+    min-height: 37px;
+    max-height: 5vh;
     background-color: rgb(204, 233, 253);
 }
 
 .logo {
     display: flex;
-    align-items: center;
     margin-left: 5vw;
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
 .image {
-    width: 40px;
+    width: 30px;
     transition: transform 0.2s;
 }
 
@@ -58,6 +65,19 @@
 #root {
     display: flex;
     min-height: 95vh;
+}
+
+/* HOME */
+.home-container {
+    display: flex;
+    width: 100%;
+    height: 95vh;
+}
+
+.home-container img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
 }
 
 /* LOGIN-CHECKIN */
@@ -171,7 +191,8 @@
 
 .filters-and-products {
     display: flex;
-    width: 100%;
+    min-width: 708px;
+    max-width: 100%;
 }
 
 .filters {
@@ -217,6 +238,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-transform: uppercase;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .clothe button {
@@ -280,9 +302,3 @@
 }
 
 /***** CONTENEDOR INFERIOR *****/
-
-.bot-container {
-    display: flex;
-    align-items: center;
-    background-color: rgb(204, 233, 253);
-}
