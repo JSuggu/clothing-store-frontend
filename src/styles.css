@@ -3,6 +3,11 @@
     padding: 0px;
 }
 
+/***** GENERAL *****/
+h1, span, a, label, input, button {
+    font-family: sans-serif;
+}
+
 /***** CONTENEDOR SUPERIOR *****/
 .top-container {
     display: flex;
@@ -48,14 +53,12 @@
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     margin-right: 20px;
-    transition: font-size 0.2s, background-color 0.1s;
+    transition: 0.2s;
 }
 
 .navbar a:hover {
-    font-size: 20px;
     cursor: pointer;
     background-color: rgb(137, 202, 245);
 }
@@ -86,21 +89,30 @@
     display: flex;
     justify-content: center;
     margin: auto;
-    width: 50vw;
+    width: 60vw;
+    height: 300px;
+}
+
+.login-checkin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
 }
 
 .options {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    gap: 20px;
 }
 
 .options button {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    min-width: 150px;
+    max-width: 200px;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
     transition: background-color 0.2ms;
 }
 
@@ -117,8 +129,20 @@
     text-align: center;
 }
 
+label {
+    font-size: 16px;
+}
+
 .login-form input {
-    margin-bottom: 10px;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.login-form .submit {
+    justify-self: center;
+    width: 100px;
+    margin-top: 10px;
+    transition: background-color 0.2ms;
 }
 
 .checkin-form {
@@ -130,14 +154,7 @@
 }
 
 .checkin-form input {
-    margin-bottom: 10px;
-}
-
-.submit {
-    justify-self: center;
-    width: 100px;
-    margin-top: 10px;
-    transition: background-color 0.2ms;
+    margin-bottom: 20px;
 }
 
 .submit:hover {
@@ -165,7 +182,6 @@
 
 .user-data span {
     font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     margin-top: 10px;
 }
@@ -226,6 +242,7 @@
     justify-content: center;
     border: 1px solid rgb(137, 202, 245);
     border-radius: 3%;
+    gap: 3px;
 }
 
 .clothe-image {
@@ -235,8 +252,7 @@
 
 .clothe span {
     font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-bottom: 5px;
     text-align: center;
 }
@@ -301,4 +317,71 @@
     margin-top: 20px;
 }
 
-/***** CONTENEDOR INFERIOR *****/
+/***** SMARTPHONE-MEDIA-QUERIES *****/
+@media screen and (max-width: 480px)  {
+
+    /* NAVBAR */
+    .top-container {
+        min-width: 340px;
+        max-width: 100%;
+    }
+    
+    /* FILTROS DE PRODUCTOS */
+    .filters-products-container h1 {
+        margin-bottom: 20px;
+    }
+
+    .add-button {
+        margin-left: 0px;
+        margin-bottom: 50px;
+        align-self: center;
+    }
+
+    .filters-and-products {
+        min-width: 340px;
+        max-width: 100%;
+        flex-direction: column;
+    }
+
+    .filters {
+        min-width: 340px;
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0px;
+        border:  none;
+        margin-bottom: 20px;
+        padding-left: 5px;
+    }
+
+    .filters label {
+        font-size: 14px;
+    }
+
+    .choice {
+        display: flex;
+        align-items: center;
+        gap: 1px;
+    }  
+
+    /* PRODUCTOS */
+
+    .products {
+        width: 100%;
+        grid-template-columns: 40% 40%;
+        column-gap: 5%;
+        row-gap: 20px;
+        padding-left: 0px;
+        margin-top: 0px;
+        justify-content: center;
+    }
+
+    .clothe {
+        gap: 2px;
+    }
+
+    .clothe span {
+        font-size: 14px;
+    }
+}
