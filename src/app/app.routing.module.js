@@ -2,10 +2,11 @@ import { homeComponent } from "./components/home/home.component";
 import { loginAndCheckinComponent } from "./components/login-checkin/login-checkin.component";
 import { userComponent } from "./components/user/user.component";
 import { productsComponent } from "./components/products/products.component";
+import { urlGroup } from "./services/urls.service";
 
 const root = document.querySelector("#root");
 if(sessionStorage.getItem("login") == null)
-    fetch("http://localhost:3000/database/backup");
+    fetch(`${urlGroup.railServer}/database/backup`);
 
 //Rutas
 const router = async function(route) {

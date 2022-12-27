@@ -1,9 +1,11 @@
 import productsView from "./products.component.html";
 import productCardService from "../../services/product-card.service";
 import { forms } from "../../services/clothe-form.service";
+import { urlGroup } from "../../services/urls.service";
 
 const divElem = document.createElement("div");
 divElem.className = "filters-products-container";
+const urlDomain = urlGroup.railServer;
 
 export const productsComponent = {
     view: function (){
@@ -13,7 +15,7 @@ export const productsComponent = {
 
     //Funcion que muestra todos los productos de la base de datos
     loadProducts: async function (){
-        const response = await fetch("http://localhost:3000/products");
+        const response = await fetch(`${urlDomain}/products`);
         const allProducts = (await response.json()).allProducts;
 
         const productsElem = divElem.querySelector(".products");
@@ -54,7 +56,7 @@ export const productsComponent = {
 
             const filterSelected = e.target.className;
 
-            const response = await fetch(`http://localhost:3000/products/${filterSelected}`)
+            const response = await fetch(`${urlDomain}/products/${filterSelected}`)
             const allProductsFiltered = (await response.json()).allProducts;
             
             filtersAndProducts.removeChild(productsElem);
@@ -119,7 +121,7 @@ export const productsComponent = {
 
                 //obtengo el token que se guarda en el local storage y lo envio para la auntenticacion
                 const token = "Bearer " + localStorage.getItem("user"); 
-                const response = await fetch("http://localhost:3000/add/product", {
+                const response = await fetch(`${urlDomain}/add/product`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -190,7 +192,7 @@ export const productsComponent = {
                     }
 
                     const token = "Bearer " + localStorage.getItem("user");
-                    const response = await fetch(`http://localhost:3000/modify/product/${data.id}`, {
+                    const response = await fetch(`${urlDomain}/modify/product/${data.id}`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",
@@ -218,7 +220,7 @@ export const productsComponent = {
                 const answer = prompt("Realmente quiere borrar este elemento? si/no");
 
                 if(answer.toLowerCase() == "si"){
-                    const response = await fetch(`http://localhost:3000/delete/product/${clotheId}`, {
+                    const response = await fetch(`${urlDomain}/delete/product/${clotheId}`, {
                         method: "DELETE",
                         headers: {
                             "Authorization": token

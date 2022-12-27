@@ -1,7 +1,9 @@
 import loginAndCheckinView from "./login-checkin.component.html";
+import { urlGroup } from "../../services/urls.service";
 
 const divElem = document.createElement("div");
 divElem.className = "login-checkin-container";
+const urlDomain = urlGroup.railServer;
 
 export const loginAndCheckinComponent = {
     view: function(){
@@ -31,7 +33,7 @@ export const loginAndCheckinComponent = {
                 userName: e.target.user.value,
                 password: e.target.password.value
             }
-            const response = await fetch("http://localhost:3000/log-in", {
+            const response = await fetch(`${urlDomain}/log-in`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -64,7 +66,7 @@ export const loginAndCheckinComponent = {
                 password: e.target.password.value,
                 email: e.target.email.value
             }
-            const response = await fetch("http://localhost:3000/check-in", {
+            const response = await fetch(`${urlDomain}/check-in`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
