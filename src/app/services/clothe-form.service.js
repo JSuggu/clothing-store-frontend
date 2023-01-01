@@ -15,6 +15,11 @@ const form = `
         <input type="text" name="type" id="clothe-type">
         <input type="submit" value="Enviar" id="send-form">
     </form>
+    <div class="products-data-available">
+        <span>Colores y Tipos disponibles</span>
+        <span>Colores: Azul, Amarillo y Rojo</span>
+        <span>Tipos: Calzado, Pantalon, Remeras/Camisas</span>
+    </div>
 `
 
 export const forms = {

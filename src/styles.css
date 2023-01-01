@@ -4,7 +4,7 @@
 }
 
 /***** GENERAL *****/
-h1, span, a, label, input, button {
+h1, h3, span, a, label, input, button {
     font-family: sans-serif;
 }
 
@@ -90,7 +90,7 @@ h1, span, a, label, input, button {
     justify-content: center;
     margin: auto;
     width: 60vw;
-    height: 300px;
+    height: 350px;
 }
 
 .login-checkin {
@@ -98,6 +98,10 @@ h1, span, a, label, input, button {
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+}
+
+.login-checkin h3 {
+    align-self: flex-start;
 }
 
 .options {
@@ -292,6 +296,8 @@ label {
 .form-container h1 {
     margin-top: 50px;
     margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .clothe-form {
@@ -315,6 +321,21 @@ label {
 
 #send-form {
     margin-top: 20px;
+}
+
+.products-data-available {
+    display: flex;
+    width: 100%;
+    max-width: 576px;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.products-data-available span:first-child {
+    align-self: center;
+    margin-bottom: 5px;
 }
 
 @media screen and (max-width: 1280px){
@@ -395,5 +416,34 @@ label {
 
     .clothe span {
         font-size: 14px;
+    }
+
+    /*Formulario para añadir productos*/
+    .clothes-form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0px auto;
+    }
+
+    .form-container {
+        width: 300px;
+        min-height: 70%;
+    }
+
+    .products-data-available {
+        max-width: 290px;
+        margin-left: 10px;
+    }
+    
+    .products-data-available span:first-child {
+        align-self: center;
+        margin-bottom: 5px;
     }
 }
