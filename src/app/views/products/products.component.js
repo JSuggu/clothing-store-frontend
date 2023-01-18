@@ -1,7 +1,7 @@
 import productsView from "./products.component.html";
-import productCardService from "../../services/product-card.service";
-import { forms } from "../../services/clothe-form.service";
-import { urlGroup } from "../../services/urls.service";
+import productCardService from "../../utils/product-card.service";
+import { forms } from "../../utils/clothe-form.service";
+import { urlGroup } from "../../utils/urls.service";
 
 const divElem = document.createElement("div");
 divElem.className = "filters-products-container";

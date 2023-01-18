@@ -1,8 +1,8 @@
-import { homeComponent } from "./components/home/home.component";
-import { loginAndCheckinComponent } from "./components/login-checkin/login-checkin.component";
-import { userComponent } from "./components/user/user.component";
-import { productsComponent } from "./components/products/products.component";
-import { urlGroup } from "./services/urls.service";
+import { homeComponent } from "./views/home/home.component";
+import { loginAndCheckinComponent } from "./views/login-checkin/login-checkin.component";
+import { userComponent } from "./views/user/user.component";
+import { productsComponent } from "./views/products/products.component";
+import { urlGroup } from "./utils/urls.service";
 
 const root = document.querySelector("#root");
 if(sessionStorage.getItem("login") == null)

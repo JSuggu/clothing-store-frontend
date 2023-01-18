@@ -1,5 +1,5 @@
 import loginAndCheckinView from "./login-checkin.component.html";
-import { urlGroup } from "../../services/urls.service";
+import { urlGroup } from "../../utils/urls.service";
 
 const divElem = document.createElement("div");
 divElem.className = "login-checkin-container";
