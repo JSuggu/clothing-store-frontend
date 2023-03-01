@@ -16,7 +16,7 @@ h1, h3, span, a, label, input, button {
     justify-content: space-between;
     min-height: 37px;
     max-height: 5vh;
-    background-color: rgb(204, 233, 253);
+    background-color: rgb(137, 202, 245);
 }
 
 .logo {
@@ -60,7 +60,7 @@ h1, h3, span, a, label, input, button {
 
 .navbar a:hover {
     cursor: pointer;
-    background-color: rgb(137, 202, 245);
+    background-color: rgb(91, 175, 231);
 }
 
 /***** CONTENEDOR PRINCIPAL *****/
@@ -68,6 +68,7 @@ h1, h3, span, a, label, input, button {
 #root {
     display: flex;
     min-height: 95vh;
+    background-color: rgb(218, 218, 218);
 }
 
 /* HOME */
@@ -118,10 +119,14 @@ h1, h3, span, a, label, input, button {
     padding-left: 10px;
     padding-right: 10px;
     transition: background-color 0.2ms;
+    background-color: rgb(137, 202, 245);
+    border: 1px solid;
+    border-radius: 3px 3px 3px 3px;
+    padding: 2px;
 }
 
 .options button:hover {
-    background-color: rgb(137, 202, 245);
+    background-color: rgb(91, 175, 231);
     cursor: pointer;
 }
 
@@ -142,11 +147,15 @@ label {
     margin-bottom: 20px;
 }
 
-.login-form .submit {
+.submit {
     justify-self: center;
     width: 100px;
     margin-top: 10px;
     transition: background-color 0.2ms;
+    background-color: rgb(137, 202, 245);
+    border: 1px solid;
+    border-radius: 3px 3px 3px 3px;
+    padding: 2px;
 }
 
 .checkin-form {
@@ -162,7 +171,7 @@ label {
 }
 
 .submit:hover {
-    background-color: rgb(137, 202, 245);
+    background-color: rgb(91, 175, 231);
     cursor: pointer;
 }
 
@@ -190,6 +199,20 @@ label {
     margin-top: 10px;
 }
 
+.sign-off {
+    background-color: rgb(137, 202, 245);
+    border: 1px solid;
+    border-radius: 3px 3px 3px 3px;
+    padding: 2px;
+    transition: background-color 0.2ms;
+    margin-top: 5px;
+}
+
+.sign-off:hover {
+    background-color: rgb(91, 175, 231);
+    cursor: pointer;
+}
+
 /* PRODUCTOS */
 .filters-products-container {
     display: flex;
@@ -207,21 +230,37 @@ label {
     margin-left: 300px;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: rgb(137, 202, 245);
+    transition: background-color 0.2ms;
+    border: 1px solid;
+    border-radius: 3px 3px 3px 3px;
+    padding: 2px;
+}
+
+.add-button:hover {
+    background-color: rgb(91, 175, 231);
+    cursor: pointer;
 }
 
 .filters-and-products {
     display: flex;
     min-width: 708px;
     max-width: 100%;
+    background-color: rgb(218, 218, 218);
 }
 
 .filters {
     display: flex;
     flex-direction: column;
-    min-width: 10%;
+    min-width: 11%;
     padding-left: 10px;
     padding-top: 2%;
-    border-right: 1px dashed black;
+    margin-top: 2%;
+    margin-left: 0.5%;
+    gap: 10px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgb(137, 202, 245);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
 }
 
 .products {
@@ -245,8 +284,10 @@ label {
     align-items: center;
     justify-content: center;
     border: 1px solid rgb(137, 202, 245);
-    border-radius: 3%;
+    border-radius: 10px 10px 10px 10px;
     gap: 3px;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+    background-color: rgb(137, 202, 245);
 }
 
 .clothe-image {
@@ -345,7 +386,6 @@ label {
         column-gap: 5%;
         row-gap: 20px;
         padding-left: 0px;
-        margin-top: 0px;
         justify-content: center;
     }
 }
@@ -384,8 +424,10 @@ label {
         gap: 10px;
         padding: 0px;
         border:  none;
+        margin-left: 10px;
+        margin-right: 10px;
         margin-bottom: 20px;
-        padding-left: 5px;
+        padding: 5px;
     }
 
     .filters label {
